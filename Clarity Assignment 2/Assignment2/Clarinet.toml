@@ -1,0 +1,36 @@
+[project]
+name = "Assignment2"
+authors = []
+description = ""
+telemetry = true
+requirements = []
+cache_dir = "C:\\Users\\Eqan Ahmad\\.clarinet\\cache"
+boot_contracts = ["pox", "costs-v2", "bns"]
+[contracts.Q1]
+path = "contracts/Q1.clar"
+depends_on = []
+
+[contracts.Q2]
+path = "contracts/Q2.clar"
+depends_on = []
+
+[contracts.Q3]
+path = "contracts/Q3.clar"
+depends_on = []
+
+[contracts.Q4]
+path = "contracts/Q4.clar"
+depends_on = []
+
+[repl]
+costs_version = 2
+parser_version = 2
+
+[repl.analysis]
+passes = ["check_checker"]
+
+[repl.analysis.check_checker]
+strict = false
+trusted_sender = false
+trusted_caller = false
+callee_filter = false

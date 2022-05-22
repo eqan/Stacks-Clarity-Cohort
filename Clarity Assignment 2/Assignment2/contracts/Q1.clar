@@ -1,0 +1,13 @@
+;; Public functions
+(define-read-only (is-leap (year uint))
+    (if (is-eq (mod year u400) u0)
+        (ok true)
+        (if (is-eq (mod year u100) u0)
+            (ok false)
+            (if (is-eq (mod year u4) u0)
+                (ok true)
+                (ok false)
+            )
+        )
+    )
+)
