@@ -10,6 +10,22 @@ boot_contracts = ["pox", "costs-v2", "bns"]
 path = "contracts/Hello.clar"
 depends_on = []
 
+[contracts.L10]
+path = "contracts/L10.clar"
+depends_on = []
+
+[contracts.L7]
+path = "contracts/L7.clar"
+depends_on = []
+
+[contracts.L8]
+path = "contracts/L8.clar"
+depends_on = []
+
+[contracts.L9]
+path = "contracts/L9.clar"
+depends_on = []
+
 [repl]
 costs_version = 2
 parser_version = 2
