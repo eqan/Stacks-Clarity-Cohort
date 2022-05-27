@@ -7,11 +7,11 @@ Clarinet.test({
     async fn(chain: Chain, accounts: Map<string, Account>) {
         let deployer = accounts.get('deployer')!;
         let block = chain.mineBlock([
-            Tx.contractCall('Q4', 'find-missing-number', [types.list([1, 2, 3, 4, 6, 7, 8, 9, 10])], deployer.address),
-            Tx.contractCall('Q4', 'find-missing-number', [types.list([1, 3, 4, 5, 6, 7, 8, 9, 10])], deployer.address)
+            Tx.contractCall('Q4', 'get-missing', [types.list([1, 2, 3, 4, 6, 7, 8, 9, 10])], deployer.address),
+            Tx.contractCall('Q4', 'get-missing', [types.list([1, 3, 4, 5, 6, 7, 8, 9, 10])], deployer.address)
         ]);
         let receipts = block.receipts;
-        receipts[0].result.expectOk().expectUint(5);
-        receipts[1].result.expectOk().expectUint(2);
+        receipts[0].result.expectOk().expectInt(5);
+        receipts[1].result.expectOk().expectInt(2);
     },
 });
