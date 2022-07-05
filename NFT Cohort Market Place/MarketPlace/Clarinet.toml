@@ -1,0 +1,28 @@
+[project]
+name = "contract"
+authors = []
+description = ""
+telemetry = false
+requirements = []
+cache_dir = "C:\\Users\\Eqan Ahmad\\.clarinet\\cache"
+boot_contracts = ["pox", "costs-v2", "bns"]
+[contracts.nft]
+path = "contracts/nft.clar"
+depends_on = ["sip009-nft-standard"]
+
+[contracts.sip009-nft-standard]
+path = "contracts/sip009-nft-standard.clar"
+depends_on = []
+
+[repl]
+costs_version = 2
+parser_version = 2
+
+[repl.analysis]
+passes = ["check_checker"]
+
+[repl.analysis.check_checker]
+strict = false
+trusted_sender = false
+trusted_caller = false
+callee_filter = false
